@@ -1,3 +1,3 @@
-Etch-a-sketch made from scratch
+# Etch-a-sketch
 
-[Live demo](emmariescurrena.github.io/etch-a-sketch/)
+Etch-a-sketch made from scratch
