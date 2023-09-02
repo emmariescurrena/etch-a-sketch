@@ -15,10 +15,6 @@ const sizeValue = document.getElementById("sizeValue");
 const sizeSlider = document.getElementById("sizeSlider");
 const grid = document.getElementById("grid");
 
-reloadGrid = function () {
-  clearGrid();
-  setupGrid(currentSize);
-};
 clearGrid = () => (grid.innerHTML = "");
 clearBtn.onclick = () => reloadGrid();
 
@@ -36,14 +32,22 @@ function setupGrid(currentSize) {
   }
 }
 
+reloadGrid = () => {
+  clearGrid();
+  setupGrid(currentSize);
+};
+
 changeCurrentColor = (newColor) => (currentColor = newColor);
 colorPicker.oninput = (e) => changeCurrentColor(e.target.value);
 
+previewSize = (newSize) => (sizeValue.innerText = `${newSize} x ${newSize}`);
+sizeSlider.oninput = () => previewSize(sizeSlider.value);
+
 changeSize = (newSize) => {
-  sizeValue.innerText = `${newSize} x ${newSize}`;
   currentSize = newSize;
+  reloadGrid();
 };
-sizeSlider.oninput = () => changeSize(sizeSlider.value);
+sizeSlider.onchange = () => changeSize(sizeSlider.value);
 
 function changeMode(newMode) {
   highlightButton(newMode);
