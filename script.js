@@ -39,11 +39,11 @@ function setupGrid(currentSize) {
 changeCurrentColor = (newColor) => (currentColor = newColor);
 colorPicker.oninput = (e) => changeCurrentColor(e.target.value);
 
-previewSize = () =>
-  sizeValue.innerHTML(`${sizeSlider.value} x ${sizeSlider.value}`);
-sizeSlider.onmove = () => previewSize();
-changeSize = (newSize) => (currentSize = newSize);
-sizeSlider.oninput = (e) => changeSize(e.target.value);
+changeSize = (newSize) => {
+  sizeValue.innerText = `${newSize} x ${newSize}`;
+  currentSize = newSize;
+};
+sizeSlider.oninput = () => changeSize(sizeSlider.value);
 
 function changeMode(newMode) {
   highlightButton(newMode);
