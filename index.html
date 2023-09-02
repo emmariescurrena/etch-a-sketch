@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-sketch by emmariescurrena</title>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+  <div class="header">
+    Etch-a-sketch
+  </div>
+  <main class="main">
+    <div class="blank-space">
+      <div class="settings">
+        <input id="colorPicker" class="colorPicker" type="color" value="#C214FF"/>
+        <button id="colorBtn" class="option">Color mode</button>
+        <button id="rainbowBtn" class="option">Rainbow mode</button>
+        <button id="eraserBtn" class="option">Eraser</button>
+        <button id="clearBtn" class="option">Clear</button>
+        <div class="slider">
+          <div id="sizeValue" class="size-value">4 x 4</div>
+          <input id="sizeSlider" type="range" value="16" min="1" max="100" />
+        </div>
+      </div>
+    </div>
+    <div id="grid" class="grid">
+    </div>
+    <div class="blank-space"></div>
+  </main>
+  <div class="footer">
+    <p>
+      Made by emmariescurrena
+    </p>
+    <a href="https://github.com/emmariescurrena" target="_blank">
+      <img src="./images/github.png" alt="github" >
+    </a>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

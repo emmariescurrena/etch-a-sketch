@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("./fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf");
+  font-weight: 600;
+}
+
+* {
+  font-family: "Open Sans Bold";
+}
+
+
+html {
+  background-color: rgb(231, 231, 231);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 60pt;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.blank-space {
+  flex: 1;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.colorPicker {
+  border: none;
+  width: 100px;
+  height: 100px;
+}
+
+.option {
+  border: 2px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.option:hover, .colorpicker:hover {
+  transition: all 0.05s;
+  scale: 1.1;
+}
+
+.on {
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+.slider {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  width: 450px;
+  height: 450px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(133, 133, 133);
+}
+
+.cell {
+  background-color: white;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.footer > a {
+  margin: 0;
+  padding: 0;
+}
+
+a img {
+  width: 30px;
+  height: 30px;
+}
