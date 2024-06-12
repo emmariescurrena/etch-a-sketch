@@ -41,18 +41,20 @@ changeCurrentColor = (newColor) => (currentColor = newColor);
 colorPicker.oninput = (e) => changeCurrentColor(e.target.value);
 
 previewSize = (newSize) => (sizeValue.innerText = `${newSize} x ${newSize}`);
-sizeSlider.oninput = () => previewSize(sizeSlider.value);
+sizeSlider.onmousemove = () => previewSize(sizeSlider.value);
 
 changeSize = (newSize) => {
-  currentSize = newSize;
+  currentSize = parseInt(newSize);
   reloadGrid();
 };
 sizeSlider.onchange = () => changeSize(sizeSlider.value);
+
 
 function changeMode(newMode) {
   highlightButton(newMode);
   currentMode = newMode;
 }
+
 
 function highlightButton(newMode) {
   if (currentMode === "color") {
@@ -76,9 +78,11 @@ colorBtn.onclick = () => changeMode("color");
 rainbowBtn.onclick = () => changeMode("rainbow");
 eraserBtn.onclick = () => changeMode("eraser");
 
+
 let mouseDown = false;
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
+grid.onmousedown = () => (mouseDown = true);
+grid.onmouseup = () => (mouseDown = false);
+
 
 function changeCellColor(e) {
   if (e.type === "mouseover" && !mouseDown) return;
